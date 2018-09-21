@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "prod": "npm run build && npm run start"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "async": "^2.6.1",
@@ -24,10 +23,6 @@
     "pg": "^7.4.3",
     "pretty-easy-date-check": "^1.2.4",
     "sqlite3": "^4.0.2",
-    "type-of-is": "^3.5.1",
-    "webpack": "^4.19.1"
-  },
-  "devDependencies": {
-    "webpack-cli": "^3.1.0"
+    "type-of-is": "^3.5.1"
   }
 }

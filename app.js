@@ -3,17 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
-// import routtes file
 var indexRouter = require('./routes/index');
-var centrifugeRouter = require('./routes/centrifuge');
-//var vendorsRouter = require('./routes/vendorRouter');
-//var catalogueRouter = require('./routes/catalogueRouter');
-
-
-
-
+var centrifugeRouter = require('./routes/centrifugeall');
+var centrifugeGetStateRouter = require('./routes/centrifugestate');
 var app = express();
 
 // view engine setup
@@ -27,10 +19,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/centrifuge', centrifugeRouter);
-//app.use('/vendors', vendorsRouter);
-app.use('/getall', centrifugeRouter);
-//app.use('/catalogue_list', catalogueRouter);
+app.use('/centrifugeall', centrifugeRouter);
+app.use('/centrifugestate', centrifugeGetStateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
